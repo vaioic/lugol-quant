@@ -1,6 +1,6 @@
-# OIC-262 Colorimetric analysis of Lugol's staining
+# LugolQuant
 
-The goal of this project is to perform a color analysis of brightfield images of _C. elegans_ stained using Lugol's iodine solution. In particular, we are interested in quantifying the color change of the iodine stain in the oocytes with worms of different genotypes and grown in different media. 
+The goal of this project is to perform a color analysis of brightfield images of _C. elegans_ stained using Lugol's iodine solution. In particular, we are interested in quantifying the color change of the iodine stain oocytes and embryos in worms of different genotypes and grown in different media. 
 
 This repository contains both the methodology and code for the analysis.
 
@@ -19,11 +19,14 @@ The analysis relies on both QuPath for annotation and Python for measurement and
 
 1. Download or clone the GitHub repository
    ```bash
-   git clone git@github.com:vaioic/OIC-262.git
+   git clone git@github.com:vaioic/LugolQuant.git
    cd OIC-262
    ```
 
 ### Annotating the cells in QuPath
+
+> [!NOTE]
+> These instructions are a little outdated.
 
 Images should be separated into different folders for each experimental condition.
 
@@ -80,39 +83,21 @@ If running the code for the first time, you will need to create a Python virtual
 
 ### Running the code
 
-1. Start the virtual environment if not already loaded
-   ```bash
-   .\venv\Scripts\activate
-   ```
-
-2. Call ``analyze_color()`` to process images. 
-   ```python
-   main_folder = Path('D:\\Projects\\OIC-262\\data\\single_images')
-
-   analyze_color([
-        [main_folder / 'daf2 300 02112026_ mislabled as nduf7', 'daf2 300'],
-        [main_folder / 'daf2 con 1_20 02112026', 'daf2 con'],
-        [main_folder / 'gsy1 300mM 1_20 02112026', 'gsy1 300']
-        ], '..\\2026-03-03')
-   ```
-
-   The function takes in a list of paired strings - the first string is the path to the images and the second is a label that is used to group the data for subsequent plotting. The final argument is the path to the output folder.
-
-   As an alternative, you can also edit the lines under ``if __name__ == "__main__":`` to point to the correct directories and labels, then call ``analyze_color()`` without any arguments.
+TBD
 
 ### Analyzing the data
 
-The resulting data is stored as an xarray in netCDF format and as a CSV file. See [``analyze_data.py``](./analyze_data.py) for an example of a script to analyze the data.
+The resulting data is stored as an xarray in netCDF format and as a CSV file.
 
 ## Issues
 
-If you encounter any issues with running the code or have any questions, please create an [Issue](https://github.com/vaioic/OIC-244/issues) or send an email to opticalimaging@vai.org. If you are reporting a programmatic bug, please include any error messages to aid with troubleshooting.
+If you encounter any issues with running the code or have any questions, please create an [Issue](https://github.com/vaioic/LugolQuant/issues) or send an email to opticalimaging@vai.org. If you are reporting a programmatic bug, please include any error messages to aid with troubleshooting.
 
 ## Acknowledgements
 
 ### Contributors
-<a href="https://github.com/vaioic/OIC-262/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=vaioic/OIC-262" />
+<a href="https://github.com/vaioic/LugolQuant/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vaioic/LugolQuant" />
 </a>
 
 ### Dependencies
